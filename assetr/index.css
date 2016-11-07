@@ -1,0 +1,98 @@
+@charset"utf-8";
+.wrapper
+{
+    padding: 0rem;
+    margin: 0rem;
+    background: black;
+}
+#page1
+{
+    overflow: hidden;
+    width: 480px;
+    margin: 0rem auto;
+    height: 1000px;
+    display: flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-direction: column;
+    -ms-direction: column;
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    background-image: url('./p1_bg.jpg');
+    justify-content: flex-end;
+}
+#page2
+{
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+    width: 480px;
+    margin: 0rem auto;
+    height: 1000px;
+    /*display: flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;*/
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-direction: column;
+    -ms-direction: column;
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+#canvas
+{
+   margin-bottom: 1.8rem;
+   background-color:cyan;
+   border: 1px solid cyan;
+   border-radius: 80px; 
+   -webkit-border-radius: 80px;
+   -ms-border-radius: 80px;
+   -o-border-radius: 80px;
+   -moz-border-radius: 80px;
+   padding: 1.3rem 0rem;
+}
+#video
+{
+    display: none;
+}
+#page2.animation
+{
+    -ms-animation: opacty;
+    -moz-animation: opacty;
+    -webkit-animation: opacty;
+    animation: opacty;
+}
+@keyframes opacty
+{
+    0%{transition: all .3s ease-in;opacity: .2};
+    50%{transition: all .3s ease-in;opacity: .5};
+    100%{transition: all .3s ease-in;opacity: 1}
+}
+@-webkit-keyframes opacty
+{
+    0%{-webkit-transition: all .3s ease-in;opacity: .2};
+    50%{-webkit-transition: all .3s ease-in;opacity: .5};
+    100%{-webkit-transition: all .3s ease-in;opacity: 1}
+}
+@-moz-keyframes opacty
+{
+    0%{-moz-transition: all .3s ease-in;opacity: .2};
+    50%{-moz-transition: all .3s ease-in;opacity: .5};
+    100%{-moz-transition: all .3s ease-in;opacity: 1}
+}
+
+@-ms-keyframes opacty
+{
+    0%{-ms-transition: all .3s ease-in;opacity: .2};
+    50%{-ms-transition: all .3s ease-in;opacity: .5};
+    100%{-ms-transition: all .3s ease-in;opacity: 1}
+}
