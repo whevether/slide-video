@@ -93,6 +93,11 @@ namespace SlidePlayVideo
             let canvasOffset:HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("canvas");
             let canvasOffsetX = canvasOffset.offsetLeft;
             let canvasOffsetY = canvasOffset.offsetWidth;
+            ctx.font = "20pt Arial";
+            ctx.fillStyle = "#fff";
+            ctx.strokeStyle = "#fff";
+            ctx.fillText("滑动来接听电话",canvas.width/2-80,canvas.height/2+10);
+            ctx.strokeText("滑动来接听电话",canvas.width/2-80,canvas.height/2+10);
             const handletouchStart = (e)=>{
                 this.x = parseInt(e.touches[0].clientX)-canvasOffsetX;
                 this.isDragging = true;
@@ -130,6 +135,20 @@ namespace SlidePlayVideo
             const handleTouchEnd = (e)=>{
                 this.x = canvasOffsetX;
                   this.isDragging = false;
+                  if((this.x<this.max)||(this.x<0))
+                  {
+                      ctx.clearRect(0,0,canvas.width,canvas.height);
+                      let image:HTMLImageElement = new Image();
+                        image.onload = ()=>{
+                            ctx.drawImage(image,10,0,60,60);
+                        };
+                        image.src = "./assetr/p1_bar.png";
+                         ctx.font = "20pt Arial";
+                        ctx.fillStyle = "#fff";
+                        ctx.strokeStyle = "#fff";
+                        ctx.fillText("滑动来接听电话",canvas.width/2-80,canvas.height/2+10);
+                        ctx.strokeText("滑动来接听电话",canvas.width/2-80,canvas.height/2+10);
+                  }
             };
             canvas.addEventListener("touchstart",handletouchStart,false);
             canvas.addEventListener("touchmove",handleTouchMouse,false);
